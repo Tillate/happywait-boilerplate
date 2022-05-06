@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const Square = ({player}) => {
-    const [value, setValue ] = useState(null);
-    return (
-        <button 
-            className='square'
-            onClick={ () => {
-                if (player === 'X') {
-                    setValue('X')
-                } else {
-                    setValue('O')
-                }
-            } }>
-            {value === 'X' ? value : ''}
-            {value === 'O' ? value : ''}
-        </button>
-    );
+const Square = ({ player, setPlayer, board, setBoard }) => {
+  return (
+    <button
+      className="square"
+      onClick={() => {
+        // for (let i = 0; i < board.length; i++) {
+          if (player === "X") {
+            setBoard("X");
+            setPlayer("O")
+          } else {
+            setBoard("O");
+            setPlayer("X")
+          }
+        }
+      }
+    // }
+    >
+      {board}
+    </button>
+  );
 };
 
 export default Square;
