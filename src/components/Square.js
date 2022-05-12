@@ -1,24 +1,13 @@
 import React, { useState } from "react";
 
-const Square = ({ player, setPlayer, board, setBoard }) => {
+const Square = ({ playerTurn, board, player }) => {
   return (
-    <button
+    <div
       className="square"
-      onClick={() => {
-        // for (let i = 0; i < board.length; i++) {
-          if (player === "X") {
-            setBoard("X");
-            setPlayer("O")
-          } else {
-            setBoard("O");
-            setPlayer("X")
-          }
-        }
-      }
-    // }
+
     >
       {board}
-    </button>
+    </div>
   );
 };
 

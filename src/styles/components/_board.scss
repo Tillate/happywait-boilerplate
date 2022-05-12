@@ -27,3 +27,16 @@
     }
   }
 }
+
+.winner {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.board2 {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  margin-top: 30px;
+
+}
