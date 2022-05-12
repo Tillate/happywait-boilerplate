@@ -33,7 +33,7 @@ const Board = () => {
   }
 
   return (
-    <div>
+    <div className="board-container">
       <div className="status">
         C'est au tour du joueur : <span>{player}</span>
       </div>
