@@ -40,27 +40,27 @@ const Board = () => {
 
       <div className="board">
         <div className="row">
-          <div onClick={() => playerTurn(0)}>{board[0]}</div>
-          <div onClick={() => playerTurn(1)}>{board[1]}</div>
-          <div onClick={() => playerTurn(2)}>{board[2]}</div>
+          <Square playerTurn={playerTurn} board={board[0]} index={0}/>
+          <Square playerTurn={playerTurn} board={board[1]} index={1}/>
+          <Square playerTurn={playerTurn} board={board[2]} index={2}/>
         </div>
         <div className="row">
-          <div onClick={() => playerTurn(3)}>{board[3]}</div>
-          <div onClick={() => playerTurn(4)}>{board[4]}</div>
-          <div onClick={() => playerTurn(5)}>{board[5]}</div>
+          <Square playerTurn={playerTurn} board={board[3]} index={3}/>
+          <Square playerTurn={playerTurn} board={board[4]} index={4}/>
+          <Square playerTurn={playerTurn} board={board[5]} index={5}/>
         </div>
         <div className="row">
-          <div onClick={() => playerTurn(6)}>{board[6]}</div>
-          <div onClick={() => playerTurn(7)}>{board[7]}</div>
-          <div onClick={() => playerTurn(8)}>{board[8]}</div>
+          <Square playerTurn={playerTurn} board={board[6]} index={6}/>
+          <Square playerTurn={playerTurn} board={board[7]} index={7}/>
+          <Square playerTurn={playerTurn} board={board[8]} index={8}/>
         </div>
       </div>
       <div className="winner"></div>
 
       {/* Test Board 2 */}
       {/* <div className="board2">
-        {board.map(({ board }) => (
-          <Square onClick={() => playerTurn(0)} board={board} />
+        {board.map(({ board, i }) => (
+          <Square playerTurn={playerTurn} board={board[i]} index={i} />
         ))}
       </div> */}
     </div>
