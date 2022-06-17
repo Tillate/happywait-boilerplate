@@ -4,6 +4,7 @@ import Square from "./Square";
 const Board = () => {
   const [player, setPlayer] = useState("X");
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
+  const [winners, setWinners] = useState("");
 
   function playerTurn(arrayIndex) {
     board[arrayIndex] = player;
@@ -11,24 +12,26 @@ const Board = () => {
     player === "X" ? setPlayer("O") : setPlayer("X");
     winner();
   }
+
   function winner() {
-    const winner = document.querySelector(".winner");
+    const winnerPlayer = `Player ${player} Wins !`
+
     if (board[0] === player && board[1] === player && board[2] === player) {
-      winner.innerHTML += `Player ${player} Wins !`;
+      setWinners(winnerPlayer);
     } else if (board[3] === player && board[4] === player && board[5] === player) {
-      winner.innerHTML += `Player ${player} Wins !`;
+      setWinners(winnerPlayer);
     } else if (board[6] === player && board[7] === player && board[8] === player) {
-      winner.innerHTML += `Player ${player} Wins !`;
+      setWinners(winnerPlayer);
     } else if (board[0] === player && board[3] === player && board[6] === player) {
-      winner.innerHTML += `Player ${player} Wins !`;
+      setWinners(winnerPlayer);
     } else if (board[1] === player && board[4] === player && board[7] === player) {
-      winner.innerHTML += `Player ${player} Wins !`;
+      setWinners(winnerPlayer);
     } else if (board[2] === player && board[5] === player && board[8] === player) {
-      winner.innerHTML += `Player ${player} Wins !`;
+      setWinners(winnerPlayer);
     } else if (board[0] === player && board[4] === player && board[8] === player) {
-      winner.innerHTML += `Player ${player} Wins !`;
+      setWinners(winnerPlayer);
     } else if (board[2] === player && board[4] === player && board[6] === player) {
-      winner.innerHTML += `Player ${player} Wins !`;
+      setWinners(winnerPlayer);
     }
   }
 
@@ -55,14 +58,8 @@ const Board = () => {
           <Square playerTurn={playerTurn} board={board[8]} index={8}/>
         </div>
       </div>
-      <div className="winner"></div>
+      <div className="winner">{winners}</div>
 
-      {/* Test Board 2 */}
-      {/* <div className="board2">
-        {board.map(({ board, i }) => (
-          <Square playerTurn={playerTurn} board={board[i]} index={i} />
-        ))}
-      </div> */}
     </div>
   );
 };
